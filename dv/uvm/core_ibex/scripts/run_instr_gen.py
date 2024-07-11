@@ -65,7 +65,10 @@ def reloc_word(simulator: str,
             # For Xcelium, the build directory gets passed as the
             # "-xmlibdirpath" argument.
             (placeholder_dir, build_dir)
-        ]
+        ],
+        'questa': [
+            (placeholder_dir, build_dir)
+        ],
     }
     always_relocs = [
         # The generated test. Since riscv-dv expects to make more than one of
@@ -238,7 +241,7 @@ def _main() -> int:
 
     trr.export(write_yaml=True)
 
-    return 0
+    return ret
 
 
 if __name__ == '__main__':

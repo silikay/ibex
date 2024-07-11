@@ -370,7 +370,7 @@ class riscv_b_instr extends riscv_instr;
     case(format)
       I_FORMAT: begin
         if (instr_name inside {FSRI, FSRIW}) begin
-          `DV_CHECK_FATAL(operands.size() == 4, instr_name)
+          `DV_CHECK_FATAL(operands.size() == 4, instr_name, , )
           // fsri rd, rs1, rs3, imm
           rs1 = get_gpr(operands[1]);
           rs1_value = get_gpr_state(operands[1]);
@@ -381,7 +381,7 @@ class riscv_b_instr extends riscv_instr;
         end
       end
       R4_FORMAT: begin
-        `DV_CHECK_FATAL(operands.size() == 4)
+        `DV_CHECK_FATAL(operands.size() == 4, , , )
         rs1 = get_gpr(operands[1]);
         rs1_value = get_gpr_state(operands[1]);
         rs2 = get_gpr(operands[2]);
