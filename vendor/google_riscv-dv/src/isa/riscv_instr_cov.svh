@@ -262,11 +262,11 @@
     case(format)
       J_FORMAT, U_FORMAT : begin
         // instr rd,imm
-        `DV_CHECK_FATAL(operands.size() == 2)
+        `DV_CHECK_FATAL(operands.size() == 2, , , )
         get_val(operands[1], imm);
       end
       I_FORMAT: begin
-        `DV_CHECK_FATAL(operands.size() == 3, instr_name)
+        `DV_CHECK_FATAL(operands.size() == 3, instr_name, , )
         if(category == LOAD) begin
           // load rd, imm(rs1) -> rd,rs1,imm
           rs1 = get_gpr(operands[1]);
@@ -288,7 +288,7 @@
         end
       end
       S_FORMAT, B_FORMAT: begin
-        `DV_CHECK_FATAL(operands.size() == 3)
+        `DV_CHECK_FATAL(operands.size() == 3, , , )
         if(category == STORE) begin
           // store rs2, imm(rs1) -> rs1,rs2,imm
           rs2 = get_gpr(operands[1]);
@@ -307,9 +307,9 @@
       end
       R_FORMAT: begin
         if (has_rs2 || category == CSR) begin
-          `DV_CHECK_FATAL(operands.size() == 3)
+          `DV_CHECK_FATAL(operands.size() == 3, , , )
         end else begin
-          `DV_CHECK_FATAL(operands.size() == 2)
+          `DV_CHECK_FATAL(operands.size() == 2, , , )
         end
         if(category == CSR) begin
           // csrrw rd, csr, rs1
@@ -332,7 +332,7 @@
         end
       end
       R4_FORMAT: begin
-        `DV_CHECK_FATAL(operands.size() == 4)
+        `DV_CHECK_FATAL(operands.size() == 4, , , )
         rs1 = get_gpr(operands[1]);
         rs1_value = get_gpr_state(operands[1]);
         rs2 = get_gpr(operands[2]);

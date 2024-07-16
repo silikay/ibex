@@ -91,7 +91,7 @@
     cmd:
       - >
         vmap
-          mtiUvm $QUESTA_HOME/questasim/uvm-1.2
+          mtiUvm $QUESTA_HOME/uvm-1.2
       - >
         vlog
           -64
@@ -104,6 +104,19 @@
           -writetoplevels <tb_dir>/top.list
           -l <tb_build_log>
           <cmp_opts>
+    cosim_opts: >-
+      -f <core_ibex>/ibex_dv_cosim_dpi.f
+      /root/riscv-isa-sim/riscv/isa_parser.cc
+      /root/riscv-isa-sim/riscv/processor.cc
+      /root/riscv-isa-sim/riscv/sim.cc
+      /root/riscv-isa-sim/riscv/triggers.cc
+      /root/riscv-isa-sim/riscv/mmu.cc
+      /root/riscv-isa-sim/disasm/disasm.cc
+      /root/riscv-isa-sim/riscv/csrs.cc
+      /root/riscv-isa-sim/riscv/devices.cc
+      /root/riscv-isa-sim/riscv/rocc.cc
+      /root/riscv-isa-sim/riscv/execute.cc
+      /root/riscv-isa-sim/riscv/debug_module.cc
   sim:
     cmd:
       - >-
