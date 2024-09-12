@@ -211,7 +211,7 @@ class riscv_floating_point_instr extends riscv_instr;
         end
       end
       S_FORMAT: begin
-        `DV_CHECK_FATAL(operands.size() == 3, , , )
+        `DV_CHECK_FATAL(operands.size() == 3)
         // FSW rs2 is fp
         fs2 = get_fpr(operands[0]);
         fs2_value = get_gpr_state(operands[0]);
@@ -228,9 +228,9 @@ class riscv_floating_point_instr extends riscv_instr;
         end
 
         if (has_fs2 || category == CSR) begin
-          `DV_CHECK_FATAL(operands.size() == 3, , , )
+          `DV_CHECK_FATAL(operands.size() == 3)
         end else begin
-          `DV_CHECK_FATAL(operands.size() == 2, , , )
+          `DV_CHECK_FATAL(operands.size() == 2)
         end
         if(category != CSR) begin
           fs1 = get_fpr(operands[1]);
@@ -242,7 +242,7 @@ class riscv_floating_point_instr extends riscv_instr;
         end
       end
       R4_FORMAT: begin
-        `DV_CHECK_FATAL(operands.size() == 4, , , )
+        `DV_CHECK_FATAL(operands.size() == 4)
         fs1 = get_fpr(operands[1]);
         fs1_value = get_gpr_state(operands[1]);
         fs2 = get_fpr(operands[2]);

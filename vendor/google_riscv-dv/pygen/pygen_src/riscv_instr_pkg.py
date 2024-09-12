@@ -1031,8 +1031,6 @@ class privileged_reg_t(IntEnum):
     DPC = 0x7B1  # Debug PC
     DSCRATCH0 = 0x7B2  # Debug scratch register
     DSCRATCH1 = 0x7B3  # Debug scratch register (last one)
-    CPUCTRL = 0x7C0  # CPU control register
-    SECURESEED = 0x7C1  # Security feature random seed register
     VSTART = 0x008  # Vector start position
     VXSTAT = 0x009  # Fixed point saturate flag
     VXRM = 0x00A  # Fixed point rounding mode

@@ -243,7 +243,7 @@ class riscv_zbb_instr extends riscv_instr;
     // rather than being an explicit operand. Handle this case here, otherwise use the normal
     // `update_src_regs`
     if ((format == I_FORMAT) && (instr_name != RORI)) begin
-      `DV_CHECK_FATAL(operands.size() == 2, instr_name, , )
+      `DV_CHECK_FATAL(operands.size() == 2, instr_name)
       rs1 = get_gpr(operands[1]);
       rs1_value = get_gpr_state(operands[1]);
     end else begin

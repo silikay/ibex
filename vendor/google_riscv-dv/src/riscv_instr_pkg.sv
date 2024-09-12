@@ -1092,8 +1092,6 @@ package riscv_instr_pkg;
     DPC             = 'h7B1,  // Debug PC
     DSCRATCH0       = 'h7B2,  // Debug scratch register
     DSCRATCH1       = 'h7B3,  // Debug scratch register (last one)
-    CPUCTRL         = 'h7C0,
-    SECURESEED      = 'h7C1,
     VSTART          = 'h008,  // Vector start position
     VXSTAT          = 'h009,  // Fixed point saturate flag
     VXRM            = 'h00A,  // Fixed point rounding mode

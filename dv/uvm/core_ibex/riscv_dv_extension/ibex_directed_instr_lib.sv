@@ -79,7 +79,7 @@ class ibex_rand_mseccfg_stream extends riscv_directed_instr_stream;
     csrrw_instr = riscv_instr::get_instr(CSRRWI);
     csrrw_instr.atomic = 1'b0;
     csrrw_instr.csr = MSECCFG;
-    csrrw_instr.rd = ZERO;
+    csrrw_instr.rd = '0;
     // Randomize between 3'b000 and 3'b111 to hit every combination of RLB/MMWP/MML bits.
     csrrw_instr.imm_str = $sformatf("0x%0x", $urandom_range(7,0));
     instr_list = {csrrw_instr};
