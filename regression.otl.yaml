@@ -2,7 +2,7 @@
   rule: raw_bash_build
   rule_args:
     cmds:
-      - pip install -r python-requirements.txt
+      - pip3 install -r python-requirements.txt
 
 - name: test_regression
   rule: raw_bash
