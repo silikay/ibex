@@ -97,7 +97,7 @@ class riscv_page_table_entry#(satp_mode_t MODE = SV39) extends uvm_object;
   virtual function void do_copy(uvm_object rhs);
     riscv_page_table_entry#(MODE) rhs_;
     super.do_copy(rhs);
-    `DV_CHECK_FATAL($cast(rhs_, rhs), "Cast to page_table_entry failed!", , )
+    `DV_CHECK_FATAL($cast(rhs_, rhs), "Cast to page_table_entry failed!")
     this.v = rhs_.v;
     this.xwr = rhs_.xwr;
     this.u = rhs_.u;

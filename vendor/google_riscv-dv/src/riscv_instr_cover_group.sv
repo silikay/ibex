@@ -28,7 +28,7 @@
   if (cg != null) begin \
     typ t; \
     `DV_CHECK_FATAL($cast(t, val), $sformatf("Cannot cast %0s to %0s", `"val`", `"typ`"), \
-                    "riscv_instr_cover_group", ) \
+                    "riscv_instr_cover_group") \
     cg.sample(t); \
   end
 

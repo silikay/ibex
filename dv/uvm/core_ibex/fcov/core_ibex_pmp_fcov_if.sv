@@ -673,11 +673,11 @@ interface core_ibex_pmp_fcov_if import ibex_pkg::*; #(
                                  (id_stage_i.instr_rdata_i[6:0] inside
                                     {ibex_pkg::OPCODE_LOAD, ibex_pkg::OPCODE_STORE} &&
                                   cs_registers_i.mstatus_q.mprv){
-        //ignore_bins SamePriv =
-          // (// binsof(cs_registers_i.mstatus_q.mpp) intersect {PRIV_LVL_M} &&
-           // binsof(cs_registers_i.priv_mode_id_o) intersect {PRIV_LVL_M}) ||
-          // (// binsof(cs_registers_i.mstatus_q.mpp) intersect {PRIV_LVL_U} &&
-           // binsof(cs_registers_i.priv_mode_id_o) intersect {PRIV_LVL_U});
+        ignore_bins SamePriv =
+          (binsof(cs_registers_i.mstatus_q.mpp) intersect {PRIV_LVL_M} &&
+           binsof(cs_registers_i.priv_mode_id_o) intersect {PRIV_LVL_M}) ||
+          (binsof(cs_registers_i.mstatus_q.mpp) intersect {PRIV_LVL_U} &&
+           binsof(cs_registers_i.priv_mode_id_o) intersect {PRIV_LVL_U});
 
         ignore_bins SameErr =
           (binsof(pmp_current_priv_req_err) intersect {0} &&
@@ -686,9 +686,9 @@ interface core_ibex_pmp_fcov_if import ibex_pkg::*; #(
            binsof(pmp_dside_req_err) intersect {1});
 
         // Ibex does not support H or S mode.
-        //ignore_bins unsupported_priv_lvl =
-          // binsof(cs_registers_i.mstatus_q.mpp) intersect {PRIV_LVL_H, PRIV_LVL_S} ||
-          //binsof(cs_registers_i.priv_mode_id_o) intersect {PRIV_LVL_H, PRIV_LVL_S};
+        ignore_bins unsupported_priv_lvl =
+          binsof(cs_registers_i.mstatus_q.mpp) intersect {PRIV_LVL_H, PRIV_LVL_S} ||
+          binsof(cs_registers_i.priv_mode_id_o) intersect {PRIV_LVL_H, PRIV_LVL_S};
 
         // Cannot have mprv set in U mode (as it is cleared when executing an `mret` which takes the
         // hart into U mode).
