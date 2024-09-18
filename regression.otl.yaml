@@ -9,6 +9,7 @@
   rule_args:
     cmds:
       - "cd dv/uvm/core_ibex && make SIMULATOR=vcs TEST=riscv_jump_stress_test ITERATIONS=10"
-      - "mv dv/uvm/core_ibex/out/run/tests /tmp/artifacts"
+      - "ls -l /tmp/code/dv/uvm/core_ibex/out/run/tests"
+      - "mv /tmp/code/dv/uvm/core_ibex/out/run/tests /tmp/artifacts"
     deps:
       - pip_install_requirements
