@@ -8,6 +8,7 @@
   rule: raw_bash
   rule_args:
     cmds:
-      - "cd dv/uvm/core_ibex && make SIMULATOR=vcs TEST=riscv_jump_stress_test ITERATIONS=10 || (RETCODE=$? && find out -type f -name '*.log' | xargs bash -c 'for arg do echo === LOG FILE $arg ===; cat $arg; done' && exit $RETCODE)"
+      - "cd dv/uvm/core_ibex && make SIMULATOR=vcs TEST=riscv_jump_stress_test ITERATIONS=10"
+      - "mv dv/uvm/core_ibex/out/run/tests /tmp/artifacts"
     deps:
       - pip_install_requirements
