@@ -6,6 +6,7 @@
       - sleep 15
         # from viv:
       - cat saved_logs/sig_1/riscv_jump_stress_test_22416.log
+      - exit 1
 - name: riscv_jump_stress_test_2145
   rule: raw_bash
   rule_args:
@@ -13,6 +14,7 @@
       - sleep 11
         # copied from 22416:
       - cat saved_logs/sig_1/riscv_jump_stress_test_2145.log
+      - exit 1
 - name: riscv_jump_stress_test_24008
   rule: raw_bash
   rule_args:
@@ -20,6 +22,7 @@
       - sleep 13
         # copied from 22416:
       - cat saved_logs/sig_1/riscv_jump_stress_test_24008.log
+      - exit 1
 
 
 # signature 2
@@ -29,6 +32,7 @@
     cmds:
       - sleep 20
       - cat saved_logs/sig_2/riscv_jump_stress_test_27536.log
+      - exit 1
 - name: riscv_jump_stress_test_15938
   rule: raw_bash
   rule_args:
@@ -36,6 +40,7 @@
       - sleep 22
         # copied from 27536:
       - cat saved_logs/sig_2/riscv_jump_stress_test_15938.log
+      - exit 1
 
 # signature 3
 - name: riscv_jump_stress_test_6420
@@ -44,6 +49,7 @@
     cmds:
       - sleep 20
       - cat saved_logs/sig_3/riscv_jump_stress_test_6420.log
+      - exit 1
 - name: riscv_jump_stress_test_25938
   rule: raw_bash
   rule_args:
@@ -51,6 +57,7 @@
       - sleep 22
         # copied from 6420:
       - cat saved_logs/sig_3/riscv_jump_stress_test_25938.log
+      - exit 1
 - name: riscv_jump_stress_test_4770
   rule: raw_bash
   rule_args:
@@ -58,6 +65,7 @@
       - sleep 29
         # copied from 6420:
       - cat saved_logs/sig_3/riscv_jump_stress_test_4770.log
+      - exit 1
 - name: riscv_jump_stress_test_11855
   rule: raw_bash
   rule_args:
@@ -65,6 +73,7 @@
       - sleep 17
         # copied from 6420:
       - cat saved_logs/sig_3/riscv_jump_stress_test_11855.log
+      - exit 1
 - name: riscv_jump_stress_test_26153
   rule: raw_bash
   rule_args:
@@ -72,17 +81,20 @@
       - sleep 40
         # copied from 6420:
       - cat saved_logs/sig_3/riscv_jump_stress_test_26153.log
-- name: riscv_jump_stress_test_18658
-  rule: raw_bash
-  rule_args:
-    cmds:
-      - sleep 20
-        # copied from 6420:
-      - cat saved_logs/sig_3/riscv_jump_stress_test_18658.log
-- name: riscv_jump_stress_test_4004
-  rule: raw_bash
-  rule_args:
-    cmds:
-      - sleep 25
-        # copied from 6420:
-      - cat saved_logs/sig_3/riscv_jump_stress_test_4004.log
+      - exit 1
+# - name: riscv_jump_stress_test_18658
+#   rule: raw_bash
+#   rule_args:
+#     cmds:
+#       - sleep 20
+#         # copied from 6420:
+#       - cat saved_logs/sig_3/riscv_jump_stress_test_18658.log
+#       - exit 1
+# - name: riscv_jump_stress_test_4004
+#   rule: raw_bash
+#   rule_args:
+#     cmds:
+#       - sleep 25
+#         # copied from 6420:
+#       - cat saved_logs/sig_3/riscv_jump_stress_test_4004.log
+#       - exit 1
