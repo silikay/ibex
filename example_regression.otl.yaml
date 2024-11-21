@@ -1,4 +1,5 @@
 # signature 1
+# Cosim mismatch PC mismatch, DUT retired : 800036bc , but the ISS retired: ffffffff800036e0
 - name: riscv_jump_stress_test_22416
   rule: raw_bash
   rule_args:
@@ -26,6 +27,7 @@
 
 
 # signature 2
+# Cosim mismatch Register write data mismatch to x18 DUT: 1 expected: 40001000
 - name: riscv_jump_stress_test_27536
   rule: raw_bash
   rule_args:
@@ -43,6 +45,7 @@
       - exit 1
 
 # signature 3
+# Cosim mismatch Register write index mismatch, DUT: x24 expected: x28
 - name: riscv_jump_stress_test_6420
   rule: raw_bash
   rule_args:

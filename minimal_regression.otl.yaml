@@ -1,0 +1,6 @@
+- name: riscv_jump_stress_test_22416
+  rule: raw_bash
+  rule_args:
+    cmds:
+      - cat saved_logs/sig_1/riscv_jump_stress_test_22416.log
+      - exit 1
