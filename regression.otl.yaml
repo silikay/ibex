@@ -8,20 +8,20 @@
   rule: raw_bash
   rule_args:
     cmds:
-      - "cd dv/uvm/core_ibex && make SIMULATOR=vcs TEST=riscv_jump_stress_test ITERATIONS=1 || (RETCODE=$? && mv /tmp/code/dv/uvm/core_ibex/out/run/tests /tmp/artifacts && exit $RETCODE)"
+      - "cd dv/uvm/core_ibex && make SIMULATOR=vcs TEST=riscv_jump_stress_test ITERATIONS=1 || (RETCODE=$? && mv /tmp/code/dv/uvm/core_ibex/out/run/tests /tmp/artifacts && cat /tmp/artifacts/rtl_sim.log && exit $RETCODE)"
     deps:
       - pip_install_requirements
 - name: riscv_rand_jump_test
   rule: raw_bash
   rule_args:
     cmds:
-      - "cd dv/uvm/core_ibex && make SIMULATOR=vcs TEST=riscv_rand_jump_test ITERATIONS=1 || (RETCODE=$? && mv /tmp/code/dv/uvm/core_ibex/out/run/tests /tmp/artifacts && exit $RETCODE)"
+      - "cd dv/uvm/core_ibex && make SIMULATOR=vcs TEST=riscv_rand_jump_test ITERATIONS=1 || (RETCODE=$? && mv /tmp/code/dv/uvm/core_ibex/out/run/tests /tmp/artifacts && cat /tmp/artifacts/rtl_sim.log && exit $RETCODE)"
     deps:
       - pip_install_requirements
 - name: riscv_loop_test
   rule: raw_bash
   rule_args:
     cmds:
-      - "cd dv/uvm/core_ibex && make SIMULATOR=vcs TEST=riscv_loop_test ITERATIONS=1 || (RETCODE=$? && mv /tmp/code/dv/uvm/core_ibex/out/run/tests /tmp/artifacts && exit $RETCODE)"
+      - "cd dv/uvm/core_ibex && make SIMULATOR=vcs TEST=riscv_loop_test ITERATIONS=1 || (RETCODE=$? && mv /tmp/code/dv/uvm/core_ibex/out/run/tests /tmp/artifacts && cat /tmp/artifacts/rtl_sim.log && exit $RETCODE)"
     deps:
       - pip_install_requirements
