@@ -1152,8 +1152,8 @@ module ibex_top import ibex_pkg::*; #(
     pending_access_t pending_dside_accesses_q[MaxOutstandingDSideAccesses];
     pending_access_t pending_dside_accesses_d[MaxOutstandingDSideAccesses];
     pending_access_t pending_dside_accesses_shifted[MaxOutstandingDSideAccesses];
-    assign last_pending_dside_accesses_q_valid = pending_dside_accesses_q[MaxOutstandingDSideAccesses-1].valid
-    assign last_pending_dside_accesses_q_is_read = pending_dside_accesses_q[MaxOutstandingDSideAccesses-1].is_read
+    assign last_pending_dside_accesses_q_valid = pending_dside_accesses_q[MaxOutstandingDSideAccesses-1].valid;
+    assign last_pending_dside_accesses_q_is_read = pending_dside_accesses_q[MaxOutstandingDSideAccesses-1].is_read;
 
     for (genvar i = 0; i < MaxOutstandingDSideAccesses; i++) begin : g_dside_tracker
       always_ff @(posedge clk or negedge rst_ni) begin
