@@ -1,3 +1,8 @@
+- name: pip_install_requirements
+  rule: raw_bash_build
+  rule_args:
+    cmds:
+      - pip3 install -r python-requirements.txt
 - name: riscv_jump_stress_test
   rule: raw_bash
   rule_args:
