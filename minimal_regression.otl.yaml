@@ -1,6 +1,7 @@
-- name: riscv_jump_stress_test_22416
+- name: riscv_jump_stress_test
   rule: raw_bash
   rule_args:
     cmds:
-      - cat saved_logs/sig_1/riscv_jump_stress_test_22416.log
-      - exit 1
+      - "cd dv/uvm/core_ibex && make SIMULATOR=vcs TEST=riscv_jump_stress_test ITERATIONS=1 WAVES=1 || (RETCODE=$? && mv /tmp/code/dv/uvm/core_ibex/out/run/tests /tmp/artifacts && cat /tmp/artifacts/**/rtl_sim.log && vpd2vcd $(ls /tmp/artifacts/**/waves.vpd) /tmp/artifacts/waves.vcd && exit $RETCODE)"
+    deps:
+      - pip_install_requirements
