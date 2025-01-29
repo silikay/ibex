@@ -8,35 +8,35 @@
   rule: raw_bash
   rule_args:
     cmds:
-      - "./run_test riscv_jump_stress_test"
+      - "./run_test.sh riscv_jump_stress_test"
     deps:
       - pip_install_requirements
 - name: riscv_rand_jump_test
   rule: raw_bash
   rule_args:
     cmds:
-      - "./run_test riscv_rand_jump_test"
+      - "./run_test.sh riscv_rand_jump_test"
     deps:
       - pip_install_requirements
 - name: riscv_loop_test
   rule: raw_bash
   rule_args:
     cmds:
-      - "./run_test riscv_loop_test"
+      - "./run_test.sh riscv_loop_test"
     deps:
       - pip_install_requirements
 - name: riscv_unaligned_load_store_test
   rule: raw_bash
   rule_args:
     cmds:
-      - "./run_test riscv_unaligned_load_store_test"
+      - "./run_test.sh riscv_unaligned_load_store_test"
     deps:
       - pip_install_requirements
 - name: riscv_csr_test
   rule: raw_bash
   rule_args:
     cmds:
-      - "./run_test riscv_csr_test"
+      - "./run_test.sh riscv_csr_test"
     deps:
       - pip_install_requirements
 
@@ -44,34 +44,34 @@
   rule: raw_bash
   rule_args:
     cmds:
-      - "./run_test riscv_arithmetic_basic_test"
+      - "./run_test.sh riscv_arithmetic_basic_test"
     deps:
       - pip_install_requirements
 - name: riscv_machine_mode_rand_test
   rule: raw_bash
   rule_args:
     cmds:
-      - "./run_test riscv_machine_mode_rand_test"
+      - "./run_test.sh riscv_machine_mode_rand_test"
     deps:
       - pip_install_requirements
 - name: riscv_rand_instr_test
   rule: raw_bash
   rule_args:
     cmds:
-      - "./run_test riscv_rand_instr_test"
+      - "./run_test.sh riscv_rand_instr_test"
     deps:
       - pip_install_requirements
 - name: riscv_mmu_stress_test
   rule: raw_bash
   rule_args:
     cmds:
-      - "./run_test riscv_mmu_stress_test"
+      - "./run_test.sh riscv_mmu_stress_test"
     deps:
       - pip_install_requirements
 - name: riscv_illegal_instr_test
   rule: raw_bash
   rule_args:
     cmds:
-      - "./run_test riscv_illegal_instr_test"
+      - "./run_test.sh riscv_illegal_instr_test"
     deps:
       - pip_install_requirements
